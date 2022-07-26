@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "io/ioutil"
 import "os"
-import "luago/ch02/src/luago/binchunk"
+import "luago/ch02/luago/binchunk"
 
 func main() {
 	if len(os.Args) > 1 {

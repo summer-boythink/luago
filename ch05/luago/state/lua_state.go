@@ -6,6 +6,6 @@ type luaState struct {
 
 func New() *luaState {
 	return &luaState{
-		stack: newLuaStack(20),
+		stack: newLuaStack(30),
 	}
 }

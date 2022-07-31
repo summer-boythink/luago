@@ -1,6 +1,5 @@
 package state
 
-
 import . "luago/ch04/luago/api"
 
 type luaValue interface{}

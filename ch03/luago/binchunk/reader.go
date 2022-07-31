@@ -1,8 +1,8 @@
 package binchunk
 
 import (
-	"math"
 	"encoding/binary"
+	"math"
 )
 
 type reader struct {

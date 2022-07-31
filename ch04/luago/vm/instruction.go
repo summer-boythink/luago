@@ -50,7 +50,7 @@ func (in Instruction) OpName() string {
 
 func (in Instruction) OpMode() byte {
 	return opcodes[in.Opcode()].opMode
-	
+
 }
 func (in Instruction) BMode() byte {
 	return opcodes[in.Opcode()].argBMode

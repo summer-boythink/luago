@@ -1,30 +1,27 @@
 package main
 
 import "fmt"
-import . "luago/ch04/luago/api"
-import _ "luago/ch04/luago/binchunk"
-import "luago/ch04/luago/state"
+import . "luago/ch05/luago/api"
+import _ "luago/ch05/luago/binchunk"
+import "luago/ch05/luago/state"
 
 func main() {
 	ls := state.New()
+	ls.PushInteger(1)
+	ls.PushString("2.0")
+	ls.PushString("3.0")
+	ls.PushNumber(4.0)
+	printStack(ls)
 
-	ls.PushBoolean(true)
+	ls.Arith(LUA_OPADD)
 	printStack(ls)
-	ls.PushInteger(10)
+	ls.Arith(LUA_OPBNOT)
 	printStack(ls)
-	ls.PushNil()
+	ls.Len(2)
 	printStack(ls)
-	ls.PushString("hello")
+	ls.Concat(3)
 	printStack(ls)
-	ls.PushValue(-4)
-	printStack(ls)
-	ls.Replace(3)
-	printStack(ls)
-	ls.SetTop(6)
-	printStack(ls)
-	ls.Remove(-3)
-	printStack(ls)
-	ls.SetTop(-5)
+	ls.PushBoolean(ls.Compare(1, 2, LUA_OPEQ))
 	printStack(ls)
 }
 
